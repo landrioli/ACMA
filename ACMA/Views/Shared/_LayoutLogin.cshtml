@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <link rel="icon" href="Content/img/favicon.ico" type="image/x-icon">
+    <!-- ./meta section -->
+
+
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" type="text/css" href="css/dev-other/dev-ie-fix.css">
+        <![endif]-->
+
+    <!-- javascripts -->
+    <script type="text/javascript" src="Scripts/Plugins/modernizr/modernizr.js"></script>
+    <!-- ./javascripts -->
+
+</head>
+
+<body>
+    <!-- page wrapper -->
+    <div class="dev-page dev-page-loaded dev-page-sidebar-collapsed">
+        <!-- page container -->
+        <div class="dev-page-container">
+
+            <!-- page content -->
+            <div class="dev-page-content">
+                <!-- page content container -->
+                <div class="container">
+
+                    <!-- main content page -->
+                    @RenderBody();
+                    <!-- ./main content page -->
+
+                    <!-- Copyright -->
+                    <div class="copyright">
+                        <div class="pull-left">
+                            &copy; 2015 <strong>Aqvatarius</strong>. All rights reserved.
+                        </div>
+                        <div class="pull-right">
+                            <a href="#">Terms of use</a> / <a href="#">Privacy Policy</a>
+                        </div>
+                    </div>
+                    <!-- ./Copyright -->
+                </div>
+                <!-- ./page content container -->
+
+            </div>
+            <!-- ./page content -->
+        </div>
+        <!-- ./page container -->
+    </div>
+    <!-- ./page wrapper -->
+
+    <!-- javascript -->
+    @Scripts.Render("~/bundles/jquery")
+
+     <link href="~/Content/css/mcustomscrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" />
+
+    @Scripts.Render("~/bundles/template")
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="~/Scripts/Plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+
+    @RenderSection("scripts", required: false)
+
+    <!-- ./javascript -->
+
+
+</body>
+
+</html>

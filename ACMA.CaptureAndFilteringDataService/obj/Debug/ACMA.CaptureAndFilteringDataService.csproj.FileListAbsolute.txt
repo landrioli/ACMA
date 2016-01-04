@@ -1,0 +1,16 @@
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.CaptureAndFilteringDataService\bin\Debug\ACMA.CaptureAndFilteringDataService.pdb
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.CaptureAndFilteringDataService\bin\Debug\ACMA.Application.dll
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.CaptureAndFilteringDataService\bin\Debug\ACMA.Domain.dll
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.CaptureAndFilteringDataService\bin\Debug\ACMA.Repository.dll
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.CaptureAndFilteringDataService\bin\Debug\EntityFramework.dll
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.CaptureAndFilteringDataService\bin\Debug\ACMA.Application.pdb
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.CaptureAndFilteringDataService\bin\Debug\ACMA.Domain.pdb
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.CaptureAndFilteringDataService\bin\Debug\ACMA.Repository.pdb
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.CaptureAndFilteringDataService\bin\Debug\EntityFramework.xml
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.CaptureAndFilteringDataService\obj\Debug\ACMA.CaptureAndFilteringDataService.csprojResolveAssemblyReference.cache
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.CaptureAndFilteringDataService\obj\Debug\ACMA.CaptureAndFilteringDataService.pdb
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.CaptureAndFilteringDataService\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.CaptureAndFilteringDataService\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.CaptureAndFilteringDataService\bin\Debug\ACMA.CaptureAndFilteringDataService.exe.config
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.CaptureAndFilteringDataService\bin\Debug\ACMA.CaptureAndFilteringDataService.exe
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.CaptureAndFilteringDataService\obj\Debug\ACMA.CaptureAndFilteringDataService.exe

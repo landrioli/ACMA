@@ -1,0 +1,40 @@
+﻿@model ACMA.Models.Login
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<!-- page wrapper -->
+<div class="dev-page dev-page-login dev-page-login-v2">
+
+    <div class="dev-page-login-block">
+        <a class="dev-page-login-block__logo">ACMA</a>
+        <div class="dev-page-login-block__form">
+            <div class="title"><strong>Bem Vindo ao Portal Reponsivo.</strong></div>
+            @using (Html.BeginForm())
+            {         
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        @Html.TextBoxFor(p => p.User, new { @class = "form-control", title = "User", placeholder = "Usuário" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                        @Html.PasswordFor(p => p.Password, new { @class = "form-control", title = "Password", placeholder = "Senha" })
+                    </div>
+                </div>
+                <div class="form-group no-border margin-top-20">
+                    <button class="btn btn-success btn-block">Login</button>
+                </div>
+                <p><a href="@Url.Action("RecoveryPassword","Authorize")">Esqueceu a senha?</a></p>
+            }
+        </div>
+        <div class="dev-page-login-block__footer">
+            © 2015 <strong>Leandro Andrioli</strong>.
+        </div>
+    </div>
+
+</div>
+<!-- ./page wrapper -->

@@ -1,0 +1,11 @@
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.Application\bin\Debug\ACMA.Application.dll
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.Application\bin\Debug\ACMA.Application.pdb
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.Application\bin\Debug\ACMA.Domain.dll
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.Application\bin\Debug\ACMA.Repository.dll
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.Application\bin\Debug\EntityFramework.dll
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.Application\bin\Debug\ACMA.Domain.pdb
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.Application\bin\Debug\ACMA.Repository.pdb
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.Application\bin\Debug\EntityFramework.xml
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.Application\obj\Debug\ACMA.Application.csprojResolveAssemblyReference.cache
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.Application\obj\Debug\ACMA.Application.dll
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.Application\obj\Debug\ACMA.Application.pdb

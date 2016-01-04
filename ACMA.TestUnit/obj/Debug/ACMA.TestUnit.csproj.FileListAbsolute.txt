@@ -1,0 +1,8 @@
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.TestUnit\bin\Debug\ACMA.TestUnit.exe.config
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.TestUnit\bin\Debug\ACMA.TestUnit.exe
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.TestUnit\bin\Debug\ACMA.TestUnit.pdb
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.TestUnit\bin\Debug\nunit.framework.dll
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.TestUnit\bin\Debug\nunit.mocks.dll
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.TestUnit\bin\Debug\nunit.framework.xml
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.TestUnit\obj\Debug\ACMA.TestUnit.exe
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.TestUnit\obj\Debug\ACMA.TestUnit.pdb

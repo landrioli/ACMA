@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <link rel="icon" href="Content/img/favicon.ico" type="image/x-icon">
+    <!-- ./meta section -->
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" type="text/css" href="css/dev-other/dev-ie-fix.css">
+        <![endif]-->
+
+    <!-- javascripts -->
+    <script type="text/javascript" src="Scripts/Plugins/modernizr/modernizr.js"></script>
+    <!-- ./javascripts -->
+
+</head>
+
+<body>
+    <!-- page wrapper -->
+    <div class="dev-page">
+
+        <!-- page header -->
+        <div class="dev-page-header">
+
+            <div class="dph-logo">
+                <a href="index.html">ACMA</a>
+                <a class="dev-page-sidebar-collapse">
+                    <div class="dev-page-sidebar-collapse-icon">
+                        <span class="line-one"></span>
+                        <span class="line-two"></span>
+                        <span class="line-three"></span>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+        <!-- ./page header -->
+
+        <!-- page container -->
+        <div class="dev-page-container">
+
+            <!-- page sidebar -->
+            @Html.Partial("_MenuLeft");
+            <!-- ./page sidebar -->
+
+            <!-- page content -->
+            <div class="dev-page-content">
+                <!-- page content container -->
+                <div class="container">
+
+                    <!-- page title -->
+                    <div class="page-title">
+                        <h1>Title</h1>
+                        <p>Subtitle</p>
+
+                        <ul class="breadcrumb">
+                            <li><a href="#">breadcrumb</a></li>
+                            <li>nav</li>
+                        </ul>
+                    </div>
+                    <!-- ./page title -->
+
+                    <!-- main content page -->
+                    @RenderBody();
+                    <!-- ./main content page -->
+
+                    <!-- Copyright -->
+                    <div class="copyright">
+                        <div class="pull-left">
+                            &copy; 2015 <strong>Aqvatarius</strong>. All rights reserved.
+                        </div>
+                        <div class="pull-right">
+                            <a href="#">Terms of use</a> / <a href="#">Privacy Policy</a>
+                        </div>
+                    </div>
+                    <!-- ./Copyright -->
+                </div>
+                <!-- ./page content container -->
+
+            </div>
+            <!-- ./page content -->
+        </div>
+        <!-- ./page container -->
+
+        <!-- page footer -->
+        <div class="dev-page-footer dev-page-footer">
+            <!-- dev-page-footer-closed dev-page-footer-fixed -->
+            <ul class="dev-page-footer-controls">
+                <li><a href="@Url.Action("Logout", "Authorize")" class="tip" title="Logoff"><i class="fa fa-power-off"></i></a></li>
+
+                <li class="pull-right">
+                    <a class="dev-page-sidebar-minimize tip" title="Toggle navigation"><i class="fa fa-outdent"></i></a>
+                </li>
+            </ul>
+
+        </div>
+        <!-- ./page footer -->
+
+        <!-- page search -->
+        <div class="dev-search">
+            <div class="dev-search-container">
+                <div class="dev-search-form">
+                    <form action="index.html" method="post">
+                        <div class="dev-search-field">
+                            <input type="text" placeholder="Search..." value="Nature">
+                        </div>
+                    </form>
+                </div>
+                <div class="dev-search-results"></div>
+            </div>
+        </div>
+        <!-- page search -->
+    </div>
+    <!-- ./page wrapper -->
+
+    <!-- javascript -->
+    @Scripts.Render("~/bundles/jquery")
+
+     <link href="~/Content/css/mcustomscrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" />
+
+    @Scripts.Render("~/bundles/template")
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="~/Scripts/Plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+
+    @RenderSection("scripts", required: false)
+
+    <!-- ./javascript -->
+
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+﻿<div class="dev-page-sidebar">
+
+    <ul class="dev-page-navigation">
+        <li class="title">Navegação</li>
+        @foreach (var item in ViewBag.menuList)
+        {
+            //Não tem sub menu
+            if (item.ParentId == 0 && !item.HasSubMenu)
+            {
+            <li>
+                <a href=@Url.Action(item.ActionName, item.Controller)><i class="fa fa-file-o"></i><span>@item.ItemName</span></a>
+            </li>
+            //Tem sub menu e não é filho
+            }
+            else if (item.ParentId == 0)
+            {
+            <li>
+                <a href="#"><i class="fa fa-star"></i><span>@item.ItemName</span></a>
+                <ul>
+                    @foreach (var subitem in ViewBag.menuList)
+                    {
+                        //Se for filho
+                        if (subitem.ParentId == item.Id)
+                        {
+                        <li>
+                            @Html.ActionLink((string) subitem.ItemName, (string) subitem.ActionName, (string) subitem.Controller)
+                        </li>
+                        }
+                    }
+                </ul>
+            </li>
+            }
+        }
+    </ul>
+    @Html.ActionLink("Dashboard", "Index", "Home")
+
+
+</div>
+
+
+
