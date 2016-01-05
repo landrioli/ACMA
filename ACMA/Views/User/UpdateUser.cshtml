@@ -1,0 +1,92 @@
+﻿@using ACMA.Models.User
+@model UpdateUserModel
+
+@{
+    ViewBag.Title = "UpdateUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Scripts {
+    <script src="~/Scripts/Common/Common.js"></script>
+    <script src="~/Scripts/Common/ValidateMethod.js"></script>
+    <script src="~/Scripts/Common/Validate.js"></script>
+    <script src="~/Scripts/User/RegisterUser.js"></script>
+
+    <script type="text/javascript">
+        RegisterUser.init();
+    </script>
+}
+
+@using (@Html.BeginForm("RegisterUser", "User", FormMethod.Post, new { name = "formRegisterUser", id = "formRegisterUser" }))
+{
+    <div class="wrapper wrapper-white">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Nome de Usuario</label>
+                    @Html.TextBoxFor(m => m.UserName, new { title = "UserName", id = "UserName", Name = "UserName", @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Senha</label>
+                    @Html.PasswordFor(m => m.Password, new { title = "Password", id = "Password", Name = "Password", @class = "form-control" })
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Nome Completo</label>
+                    @Html.TextBoxFor(m => m.FullName, new { title = "FullName", id = "FullName", Name = "FullName", @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Telefone</label>
+                    @Html.TextBoxFor(m => m.Phone, new { title = "Phone", id = "Phone", Name = "Phone", @class = "form-control" })
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Email</label>
+                    @Html.TextBoxFor(m => m.Email, new { title = "Email", id = "Email", Name = "Email", @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Perfil de Acesso</label>
+                    <select title="IdSelectListProfile" id="IdSelectListProfile" name="IdSelectListProfile" class="form-control selectpicker">
+                        <option value="" disabled selected>-- Selecione --</option>
+                        <option value="1">Analista de TI</option>
+                        <option value="2">Gestor</option>
+                        <option value="3">Funcionário</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Nome Completo</label>
+                    @Html.TextBoxFor(m => m.FullName, new { title = "Blocked", id = "Blocked", Name = "Blocked", @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Telefone</label>
+                    @Html.TextBoxFor(m => m.Phone, new { title = "Active", id = "Active", Name = "Active", @class = "form-control" })
+                </div>
+            </div>
+        </div>
+        <div class="form-group no-border margin-top-20">
+            <input type="submit" value="Cadastrar" class="btn btn-success btn-block">
+        </div>
+    </div>
+}

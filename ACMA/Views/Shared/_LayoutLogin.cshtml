@@ -18,6 +18,11 @@
 
     <!-- javascripts -->
     <script type="text/javascript" src="Scripts/Plugins/modernizr/modernizr.js"></script>
+
+    <script>
+        window.urlBase = '@Url.Content("~")';
+    </script>
+
     <!-- ./javascripts -->
 
 </head>
@@ -60,7 +65,7 @@
     <!-- javascript -->
     @Scripts.Render("~/bundles/jquery")
 
-     <link href="~/Content/css/mcustomscrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" />
+    <link href="~/Content/css/mcustomscrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" />
 
     @Scripts.Render("~/bundles/template")
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">

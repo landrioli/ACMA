@@ -2,3 +2,4 @@ C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.Infra\
 C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.Infra\bin\Debug\ACMA.Infra.pdb
 C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.Infra\obj\Debug\ACMA.Infra.dll
 C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.Infra\obj\Debug\ACMA.Infra.pdb
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.Infra\obj\Debug\ACMA.Infra.csprojResolveAssemblyReference.cache

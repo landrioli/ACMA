@@ -1,4 +1,4 @@
-﻿@model ACMA.Models.Login
+﻿@model ACMA.Models.Authorize.Login
 @{
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/_LayoutLogin.cshtml";
@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="form-group no-border margin-top-20">
-                    <button class="btn btn-success btn-block">Login</button>
+                    <input type="submit" value="Login" class="btn btn-success btn-block">
                 </div>
                 <p><a href="@Url.Action("RecoveryPassword","Authorize")">Esqueceu a senha?</a></p>
             }

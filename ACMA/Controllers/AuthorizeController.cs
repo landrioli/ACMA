@@ -1,4 +1,4 @@
-﻿using ACMA.Models;
+﻿using ACMA.Models.Authorize;
 using System;
 using System.Collections.Generic;
 using System.Linq;

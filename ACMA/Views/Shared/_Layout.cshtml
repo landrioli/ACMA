@@ -4,10 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
+    <link href="~/Content/chosen.css" rel="stylesheet" />
     <link rel="icon" href="Content/img/favicon.ico" type="image/x-icon">
+
     <!-- ./meta section -->
 
     <!--[if lte IE 9]>
@@ -16,6 +21,10 @@
 
     <!-- javascripts -->
     <script type="text/javascript" src="Scripts/Plugins/modernizr/modernizr.js"></script>
+
+    <script>
+        window.urlBase = '@Url.Content("~")';
+    </script>
     <!-- ./javascripts -->
 
 </head>
@@ -23,7 +32,6 @@
 <body>
     <!-- page wrapper -->
     <div class="dev-page">
-
         <!-- page header -->
         <div class="dev-page-header">
 
@@ -45,7 +53,7 @@
         <div class="dev-page-container">
 
             <!-- page sidebar -->
-            @Html.Partial("_MenuLeft");
+            @Html.Partial("Partials/_MenuLeft");
             <!-- ./page sidebar -->
 
             <!-- page content -->
@@ -55,8 +63,7 @@
 
                     <!-- page title -->
                     <div class="page-title">
-                        <h1>Title</h1>
-                        <p>Subtitle</p>
+                        <h1>@ViewBag.Title</h1>
 
                         <ul class="breadcrumb">
                             <li><a href="#">breadcrumb</a></li>
@@ -115,17 +122,27 @@
             </div>
         </div>
         <!-- page search -->
+
+        <!-- page modals -->
+        @Html.Partial("Partials/_Modal")
+        <!-- page modals -->
     </div>
     <!-- ./page wrapper -->
 
     <!-- javascript -->
     @Scripts.Render("~/bundles/jquery")
-
-     <link href="~/Content/css/mcustomscrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" />
-
+    @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/template")
+
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/chosen.jquery.min.js"></script>
+    <script src="~/Scripts/jquery.maskedinput.min.js"></script>
+    <link href="~/Content/css/mcustomscrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <script src="~/Scripts/Plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+    <script src="~/Scripts/Common/Common.js"></script>
+    <script src="~/Scripts/Common/Loader.js"></script>
+    <script src="~/Scripts/Common/Modal.js"></script>
 
     @RenderSection("scripts", required: false)
 

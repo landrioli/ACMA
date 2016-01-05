@@ -59,3 +59,21 @@ textarea {
 .validation-summary-valid {
     display: none;
 }
+
+/*Validations*/
+
+label.error {
+    font-style: italic;
+    font-size: 10px !important;
+    color: #ff0000 !important;
+}
+
+input.error {
+    background: #fff2f2 !important;
+    border-color: #ffd9d9 !important;
+    color: #bd4036 !important;
+}
+
+.error + .chosen-container > :first-child {
+    border-color: #ffd9d9 !important;
+}
