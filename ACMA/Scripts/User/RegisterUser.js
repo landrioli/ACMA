@@ -24,13 +24,10 @@
         dados = Common.getFormData(form),
         loader = new Loader(form);
 
-
-
-
         formatFields(dados);
 
         $.ajax({
-            url: window.urlBase + 'api/proposta',
+            url: window.urlBase + 'User/RegisterUser',
             type: 'POST',
             data: dados,
             dataType: 'json',
@@ -39,16 +36,16 @@
             },
             success: function (data) {
                 if (data.Sucesso) {
-                    modal.setTitulo('Proposta cadastrada');
-                    modal.setMensagem('mensagem de confirmação generica de funconamento');
-                    modal.setCallbackDeFechamento(redirect);
+                    modal.setTitulo(data.Title);
+                    modal.setMensagem(data.Mensagem);
+                    modal.setCallbackDeFechamento(redirectDashboard);
                 } else {
                     modal.setTitulo('O cadastro falhou');
                     modal.setMensagem(data.Mensagem);
                 }
             },
             error: function (data) {
-                modal.setTitulo('O cadastro falhou');
+                modal.setTitulo(data.Title);
                 modal.setMensagem(data.Mensagem);
             },
             complete: function () {
@@ -58,12 +55,12 @@
         });
     };
 
-    var redirect = function () {
-        alert('kamigol');
+    var redirectDashboard = function () {
+        window.location.href = window.urlBase;
     }
 
     var formatFields = function (dados) {
-
+        dados.Phone = Common.removeNoNumerics(dados.Phone);
         //dados.Telefone = Comum.removerNaoNumericos(dados.Telefone);
         //dados.TelefoneDdd = dados.Telefone.substring(0, 2);
         //dados.Telefone = dados.Telefone.substring(2, 10);

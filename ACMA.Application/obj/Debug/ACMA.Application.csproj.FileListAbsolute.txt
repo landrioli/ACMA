@@ -9,3 +9,6 @@ C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.Applic
 C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.Application\obj\Debug\ACMA.Application.csprojResolveAssemblyReference.cache
 C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.Application\obj\Debug\ACMA.Application.dll
 C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.Application\obj\Debug\ACMA.Application.pdb
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.Application\bin\Debug\ACMA.Application.dll.config
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.Application\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.Application\bin\Debug\EntityFramework.SqlServer.xml

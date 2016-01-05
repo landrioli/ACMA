@@ -64,6 +64,7 @@
     <Compile Include="ConfigurationRepositoryTest.cs" />
     <Compile Include="FormatterServiceTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -89,6 +90,10 @@
     <ProjectReference Include="..\ACMA.Repository\ACMA.Repository.csproj">
       <Project>{5bafbcc6-672d-4600-9741-a89f70ab04cd}</Project>
       <Name>ACMA.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ACMA\ACMA.csproj">
+      <Project>{5e49cdb8-6247-465a-a22e-25cd2a114b2c}</Project>
+      <Name>ACMA</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
