@@ -77,3 +77,9 @@ input.error {
 .error + .chosen-container > :first-child {
     border-color: #ffd9d9 !important;
 }
+
+/*Login*/
+.login-error {
+    font-size: 14px !important;
+    color: #bd4036  !important;
+}

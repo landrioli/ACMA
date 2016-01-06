@@ -39,10 +39,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -59,9 +66,6 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
@@ -461,6 +465,7 @@
     <Content Include="packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll" />
     <Content Include="packages\WebGrease.1.3.0\lib\WebGrease.dll" />
     <Content Include="packages\WebGrease.1.3.0\tools\WG.exe" />
+    <Content Include="Scripts\Authorize\Login.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\chosen.jquery.js" />
@@ -498,6 +503,7 @@
     <Content Include="Scripts\Plugins\modernizr\modernizr.js" />
     <Content Include="Scripts\Plugins\moment\moment.js" />
     <Content Include="Scripts\Plugins\sparkline\jquery.sparkline.min.js" />
+    <Content Include="Scripts\User\RecoveryPassword.js" />
     <Content Include="Scripts\User\RegisterUser.js" />
     <Content Include="Scripts\User\UpdateUser.js" />
     <Content Include="Scripts\_references.js" />
@@ -542,6 +548,10 @@
     <ProjectReference Include="..\ACMA.Domain\ACMA.Domain.csproj">
       <Project>{7453fe9e-3416-47b4-8459-c05e203cb0ba}</Project>
       <Name>ACMA.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ACMA.Repository\ACMA.Repository.csproj">
+      <Project>{5bafbcc6-672d-4600-9741-a89f70ab04cd}</Project>
+      <Name>ACMA.Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

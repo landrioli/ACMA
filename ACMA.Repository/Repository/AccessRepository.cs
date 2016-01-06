@@ -10,10 +10,15 @@ namespace ACMA.Repository.Repository
 {
     public class AccessRepository : RootBaseRepository
     {
-        public AccessProfile GetAccessProfileBy(int idUser) {
-            return this.Context.User.Select(p => p.AccessProfile).First(p=>p.Id == idUser);
+        public AccessProfile GetAccessProfileBy(int idUser)
+        {
+            return this.Context.User.Select(p => p.AccessProfile).First(p => p.Id == idUser);
         }
 
+        public User GetUserBy(string userName)
+        {
+            return this.Context.User.Where(p => p.UserName == userName).SingleOrDefault();
+        }
 
         public void SaveNewUser(User user)
         {
@@ -21,6 +26,16 @@ namespace ACMA.Repository.Repository
             {
                 context.Entry(user).State = user.Id == 0 ? EntityState.Added : EntityState.Modified;
                 context.SaveChanges();
+            }
+        }
+
+        public User GetUserBy(string userName, string password)
+        {
+            using (var context = new Context())
+            {
+                return context.User.Where(p => p.UserName == userName &&
+                                             p.Password == password)
+                                    .SingleOrDefault();
             }
         }
     }

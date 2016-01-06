@@ -22,6 +22,19 @@ namespace ACMA.Application.Services
             }
         }
 
+        public bool Login(User user)
+        {
+            using (var accessRepository = new AccessRepository())
+            {
+                return accessRepository.GetUserBy(user.UserName, user.Password) == null ? false : true;
+            }
+        }
+
+        public void RecoveryPassword(string email)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Dispose()
         {
         }

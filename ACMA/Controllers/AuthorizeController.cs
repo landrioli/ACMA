@@ -1,4 +1,5 @@
-﻿using ACMA.Models.Authorize;
+﻿using ACMA.Application.Services;
+using ACMA.Models.Authorize;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,32 +18,35 @@ namespace ACMA.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(Login login, string returnUrl)
+        public JsonResult Login(Login login)
         {
             if (ModelState.IsValid)
             {
-                if (login.User == "admin" && login.Password == "pass")
+                using (var accessService = new AccessService())
                 {
-                    System.Web.Security.FormsAuthentication.SetAuthCookie(login.User, false);
-                    if (returnUrl != null)
+                    var canLogin = accessService.Login(login.ConvertModelToDomain());
+                    if (canLogin)
                     {
-                        return Redirect(returnUrl);
+                        System.Web.Security.FormsAuthentication.SetAuthCookie(login.UserName, false);
+                        return GetSuccessJson("", "");
+
                     }
-                    else return View("/Home/Index");
+                    return GetErrorJson("Login", "Usuário ou senha inválidos.");
                 }
             }
-            return View();
+            return GetErrorJson("Login", "Usuário ou senha inválidos.");
         }
 
 
         public ActionResult Logout()
         {
             System.Web.Security.FormsAuthentication.SignOut();
-            return Redirect("/Home/Index");
+            return Redirect("/Authorize/Login");
         }
 
         [Authorize]
-        public ActionResult Logue() {
+        public ActionResult Logue()
+        {
             return View();
         }
 
@@ -53,7 +57,8 @@ namespace ACMA.Controllers
         }
 
         [HttpPost]
-        public ActionResult RecoveryPassword(string email) {
+        public ActionResult RecoveryPassword(string email)
+        {
             return View();
         }
 

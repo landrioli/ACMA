@@ -32,30 +32,30 @@
             data: dados,
             dataType: 'json',
             beforeSend: function () {
-                loader.exibir();
+                loader.show();
             },
             success: function (data) {
-                if (data.Sucesso) {
-                    modal.setTitulo(data.Title);
-                    modal.setMensagem(data.Mensagem);
-                    modal.setCallbackDeFechamento(redirectDashboard);
+                if (data.Success) {
+                    modal.setTitle(data.Title);
+                    modal.setMessage(data.Message);
+                    modal.setCallbackOfClosing(redirectHome);
                 } else {
-                    modal.setTitulo('O cadastro falhou');
-                    modal.setMensagem(data.Mensagem);
+                    modal.setTitle(data.Title);
+                    modal.setMessage(data.Mensagem);
                 }
             },
             error: function (data) {
-                modal.setTitulo(data.Title);
-                modal.setMensagem(data.Mensagem);
+                modal.setTitle(data.Title);
+                modal.setMessage(data.Mensagem);
             },
             complete: function () {
-                modal.exibir();
-                loader.remover();
+                modal.show();
+                loader.remove();
             }
         });
     };
 
-    var redirectDashboard = function () {
+    var redirectHome = function () {
         window.location.href = window.urlBase;
     }
 

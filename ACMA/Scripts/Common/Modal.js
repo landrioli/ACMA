@@ -1,11 +1,11 @@
-﻿window.Modal = function (callbackCloseModal, callbackConfirmModal) {
+﻿window.Modal = function (callbackCloseModalArg, callbackConfirmModalArg) {
     'use strict';
 
     var modal,
 
     callbackConfirmModal,
 
-    callbackDeFechamentoDaModal = callbackCloseModal,
+    callbackCloseModal = callbackCloseModalArg,
 
     tituloDaModal = null,
 
@@ -17,38 +17,38 @@
         modal = $('#modal-notification');
     } else {
         modal = $('#modal-confirmation');
-        callbackConfirmModal = callbackConfirmModal;
+        callbackConfirmModal = callbackConfirmModalArg;
     }
 
-    this.setTitulo = function (titulo) {
+    this.setTitle = function (titulo) {
         tituloDaModal = titulo;
     };
 
-    this.setMensagem = function (mensagem) {
+    this.setMessage = function (mensagem) {
         mensagemDaModal = mensagem;
     };
 
-    this.setTamanho = function (tamanho) {
+    this.setSize = function (tamanho) {
         tamanhoDaModal = tamanho;
     };
 
-    this.setCallbackDeFechamento = function (callback) {
-        callbackDeFechamentoDaModal = callbackCloseModal;
+    this.setCallbackOfClosing = function (callback) {
+        callbackCloseModal = callback;
     };
 
     this.setCallbackConfirmModal = function (callback) {
         callbackConfirmModal = callbackConfirmModal;
     };
 
-    this.exibir = function () {
+    this.show = function () {
         modal.find('.modal-title').text(tituloDaModal || '');
         modal.find('.modal-message').text(mensagemDaModal || '');
         modal.find('.modal-dialog').addClass('modal-' + tamanhoDaModal);
         modal.off('hidden.bs.modal');
-        if (typeof callbackDeFechamentoDaModal == "function") {
-            modal.on('hidden.bs.modal', callbackDeFechamentoDaModal);
+        if (typeof callbackCloseModal == "function") {
+            modal.on('hidden.bs.modal', callbackCloseModal);
         }
-        if (typeof callbackConfirmModal === 'undefined') {
+        if (typeof callbackConfirmModal !== 'undefined') {
             $('#modal-confirmation').on('click', function () {
                 callbackConfirmModal;
             });
@@ -56,7 +56,7 @@
         modal.modal('show');
     };
 
-    this.esconder = function () {
+    this.hide = function () {
         modal.modal('hide');
     };
 

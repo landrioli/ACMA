@@ -2,17 +2,17 @@
     'use strict';
 
     var botaoDeSubmit = $(form).find('button[type="submit"]'),
-      textoDoBotao = botaoDeSubmit.data('texto'),
+      textoDoBotao = botaoDeSubmit.data('text'),
       textoDoLoader = "Enviando...";
 
-    this.exibir = function () {
+    this.show = function () {
         botaoDeSubmit
           .addClass('disabled')
           .attr('disabled', true)
           .text(textoDoLoader);
     };
 
-    this.remover = function () {
+    this.remove = function () {
         botaoDeSubmit
           .removeClass('disabled')
           .removeAttr('disabled')

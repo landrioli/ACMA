@@ -31,10 +31,8 @@ namespace ACMA.Controllers
             }
             catch (Exception)
             {
-                
-                throw;
+                return GetErrorJson("Cadastro de Usuário", "Não foi possível cadastrar o usuário. Tente novamente mais tarde.");
             }
-            return View();
         }
 
         public ActionResult UpdateUser()

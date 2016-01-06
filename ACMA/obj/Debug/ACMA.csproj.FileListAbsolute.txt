@@ -59,3 +59,5 @@ C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA\bin\AC
 C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA\bin\ACMA.Application.pdb
 C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA\bin\ACMA.Repository.pdb
 C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA\bin\ACMA.Domain.pdb
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA\bin\EntityFramework.SqlServer.dll
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA\bin\EntityFramework.SqlServer.xml

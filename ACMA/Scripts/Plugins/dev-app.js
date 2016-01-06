@@ -478,10 +478,7 @@ var smartWizard = {
                 }// ./end
             });
             
-            /*
-            $(".modal").on('show.bs.modal', function (e) {
-                $(this).find(".wizard").smartWizard("fixHeight");                
-            });*/
+
         }            
 
     }

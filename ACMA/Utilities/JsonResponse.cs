@@ -10,7 +10,7 @@ namespace ACMA.Utilities
     {
         private bool _success { get; set; }
         private string _title { get; set; }
-        private string _mensagem { get; set; }
+        private string _message { get; set; }
         private object _data { get; set; }
 
         public JsonResponse Success(bool success)
@@ -25,9 +25,9 @@ namespace ACMA.Utilities
             return this;
         }
 
-        public JsonResponse Message(string mensagem)
+        public JsonResponse Message(string message)
         {
-            _mensagem = mensagem;
+            _message = message;
             return this;
         }
 
@@ -43,9 +43,10 @@ namespace ACMA.Utilities
             {
                 Data = new
                 {
-                    Sucesso = _success,
-                    Mensagem = _mensagem,
-                    Dados = _data
+                    Success = _success,
+                    Title = _title,
+                    Message = _message,
+                    Data = _data
                 },
                 JsonRequestBehavior = JsonRequestBehavior.AllowGet
             };

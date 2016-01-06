@@ -1,6 +1,39 @@
 ﻿window.Validate = (function () {
     'use strict';
 
+    var configLoginForm = function (submitHandler) {
+
+        $("#formLogin").validate({
+            submitHandler: function (form) {
+                if ($(form).valid()) {
+                    submitHandler(form);
+                }
+                return false;
+            },
+            onfocusout: function (element) {
+                var valid = $(element).valid();
+                if (!valid)
+                    $(element).val('');
+            },
+            rules: {
+                UserName: {
+                    required: true
+                },
+                Password: {
+                    required: true
+                }
+            },
+            messages: {
+                UserName: {
+                    required: 'O campo Usuario é obrigatório'
+                },
+                Password: {
+                    required: 'O campo Senha é obrigatório',
+                }              
+            }
+        });
+    };
+
     var configRegisterUserForm = function (submitHandler) {
         ValidateMethod.AddMethodFullName();
         ValidateMethod.AddMethodPhoneRequired();
@@ -149,6 +182,7 @@
     };
 
     return {
+        configLoginForm: configLoginForm,
         configRegisterUserForm: configRegisterUserForm
     };
 
