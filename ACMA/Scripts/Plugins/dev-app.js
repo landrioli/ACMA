@@ -319,10 +319,10 @@ var dev_forms = {
         });
         /* ./file input */        
 
-        /* bootstrap select */
-        if($(".selectpicker").length > 0)
-            $(".selectpicker").selectpicker();        
-        /* ./bootstra select */
+        ///* bootstrap select */Problema
+        //if($(".selectpicker").length > 0)
+        //    $(".selectpicker").selectpicker();        
+        ///* ./bootstra select */
 
         /* bootstrap datepicker */
         if($(".datetimepicker").length > 0)

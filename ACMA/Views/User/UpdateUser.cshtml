@@ -2,23 +2,19 @@
 @model UpdateUserModel
 
 @{
-    ViewBag.Title = "UpdateUser";
+    ViewBag.Title = "RegisterUser";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @section Scripts {
-    <script src="~/Scripts/Common/Common.js"></script>
-    <script src="~/Scripts/Common/ValidateMethod.js"></script>
-    <script src="~/Scripts/Common/Validate.js"></script>
-    <script src="~/Scripts/User/RegisterUser.js"></script>
+    <script src="~/Scripts/User/UpdateUser.js"></script>
 
     <script type="text/javascript">
-        RegisterUser.init();
+        UpdateUser.init();
     </script>
 }
 
-@using (@Html.BeginForm("RegisterUser", "User", FormMethod.Post, new { name = "formRegisterUser", id = "formRegisterUser" }))
-{
+<form class="form-horizontal" action="javascript:void(0)" method="post" id="formUpdateUser">
     <div class="wrapper wrapper-white">
         <div class="row">
             <div class="col-md-6">
@@ -73,20 +69,20 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>Nome Completo</label>
-                    @Html.TextBoxFor(m => m.FullName, new { title = "Blocked", id = "Blocked", Name = "Blocked", @class = "form-control" })
+                    <label>Ativo</label>
+                    @Html.CheckBoxFor(m => m.Active, new { title = "Active", id = "Active", Name = "Active", @class = "form-control switch", data_size="small" })
                 </div>
             </div>
 
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>Telefone</label>
-                    @Html.TextBoxFor(m => m.Phone, new { title = "Active", id = "Active", Name = "Active", @class = "form-control" })
+                    <label>Bloqueado</label>
+                    @Html.CheckBoxFor(m => m.Blocked, new { title = "Blocked", id = "Blocked", Name = "Blocked", @class = "form-control switch", data_size="small" })
                 </div>
             </div>
         </div>
         <div class="form-group no-border margin-top-20">
-            <input type="submit" value="Cadastrar" class="btn btn-success btn-block">
+            <button type="submit" data-text="Atualizar" class="btn btn-success btn-block">Atualizar</button>
         </div>
     </div>
-}
+</form>

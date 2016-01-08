@@ -11,15 +11,14 @@
         //$("#MesInicioResidencia").mask('9?9');
         //$("#AnoInicioResidencia").mask('9?999');
         //$('[data-toggle="popover"]').popover();
-    };
-
-    var inicializarEventosDaPagina = function () {
         $('#IdSelectListProfile').chosen();
     };
 
-    var registerUser = function (form) {//DESENVOLVER MÉTODO DE FORMATAÇÃO PARA RETIRAR MASKARAS E DAR SUBMIT COM AJAX RETORNAND MENSAGEM
-                                        //CRIAR MODAL PARA AS MENSAGENS -
-                                        //CRIAR O LOADER PARA O SISTEMA -
+    var inicializarEventosDaPagina = function () {
+
+    };
+
+    var registerUser = function (form) {
         var modal = new Modal(),
         dados = Common.getFormData(form),
         loader = new Loader(form);

@@ -8,8 +8,8 @@ namespace ACMA
         // For more information on Bundling, visit http://go.microsoft.com/fwlink/?LinkId=254725
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+            //bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+            //            "~/Scripts/jquery-1.9.1.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                         "~/Scripts/jquery-ui-{version}.js"));
@@ -24,7 +24,6 @@ namespace ACMA
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/template").Include(
-                        "~/Scripts/Plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js",
                         "~/Scripts/Plugins/dev-layout-default.js",
                         "~/Scripts/Plugins/dev-app.js"));
 
@@ -33,9 +32,9 @@ namespace ACMA
                 "~/Content/css/blue-white.css"
                 ));
 
-            bundles.Add(new StyleBundle("~/Content/css/scroll").Include(
-                "~/Content/css/mcustomscrollbar/jquery.mCustomScrollbar.css"
-                ));
+            //bundles.Add(new StyleBundle("~/Content/css/scroll").Include(
+            //    "~/Content/css/mcustomscrollbar/jquery.mCustomScrollbar.css"
+            //    ));
 
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
