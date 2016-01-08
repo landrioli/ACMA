@@ -15,6 +15,26 @@ namespace ACMA.TestUnitVS
     [TestClass]
     public class UserTest
     {
+
+        public RegisterUserModel registerUser = new RegisterUserModel() {
+                                                                            UserName = "Joao.pedro",
+                                                                            Password = "456789",
+                                                                            Email = "sadasd@sda.com",
+                                                                            Phone = "654545465",
+                                                                            IdSelectListProfile = 1,
+                                                                            FullName = "Joao pedro rocha"
+                                                                        };
+
+        [TestMethod]
+        public void Login()
+        {
+            using (var accessService = new AccessService())
+            {
+                var canLogin = accessService.Login(registerUser.ConvertModelToDomain());
+                Assert.IsTrue(canLogin);
+            }
+        }
+
         [TestMethod]
         public void GetUserByUserName()
         {
@@ -49,15 +69,6 @@ namespace ACMA.TestUnitVS
             //    Contact = new Contact() { FullName = "Joao Pedro Rosa", Email = "joaozinho@hotmail.com", Phone = "231213" },
             //    IdProfile = 1
             //};
-            var registerUser = new RegisterUserModel()
-            {
-                UserName = "Joao.pedro",
-                Password = "456789",
-                Email = "sadasd@sda.com",
-                Phone = "654545465",
-                IdSelectListProfile = 1,
-                FullName = "Joao pedro rocha"
-            };
 
             using (var accessService = new AccessService())
             {
@@ -67,6 +78,10 @@ namespace ACMA.TestUnitVS
             {
                 var userRetorned = accessRepository.GetUserBy(registerUser.UserName);
                 Assert.AreEqual(registerUser.UserName, userRetorned.UserName);
+
+                var saltRandomicoSenha = userRetorned != null ? userRetorned.Password.Split('$').FirstOrDefault() : null;
+                var passwordCipher = EncryptionService.CriptografarSenha(registerUser.Password, saltRandomicoSenha);
+                Assert.AreEqual(passwordCipher, userRetorned.Password);
             }
         }
 

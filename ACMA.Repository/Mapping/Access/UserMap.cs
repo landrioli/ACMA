@@ -22,7 +22,7 @@ namespace ACMA.Domain.Entities.Access
             Property(p => p.Contact.Phone).HasMaxLength(11).HasColumnName("ContactPhone").IsRequired();
             
             Property(p => p.UserName).HasMaxLength(20).IsRequired();
-            Property(p => p.Password).HasMaxLength(30).IsRequired();
+            Property(p => p.Password).HasMaxLength(40).IsRequired();
 
             HasRequired(p => p.AccessProfile).WithMany(p => p.User).HasForeignKey(p => p.IdProfile);
         }

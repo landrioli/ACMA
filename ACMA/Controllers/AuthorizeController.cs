@@ -59,7 +59,19 @@ namespace ACMA.Controllers
         [HttpPost]
         public ActionResult RecoveryPassword(string email)
         {
-            return View();
+            try
+            {
+                using (var accessService = new AccessService())
+                {
+                    accessService.RecoveryPassword(email);
+                    return GetErrorJson("Recuperar Senha", "Foi enviado uma notificação com uma nova senha para o email do usuário cadastrado.");
+                }
+            }
+            catch (Exception)
+            {
+                return GetErrorJson("Recuperar Senha", "O email informado não existe.");
+            }
+
         }
 
     }

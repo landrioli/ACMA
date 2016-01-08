@@ -55,6 +55,8 @@
     <Compile Include="Services\ActiveAssetService.cs" />
     <Compile Include="Services\AuthorizeService.cs" />
     <Compile Include="Services\BaseService.cs" />
+    <Compile Include="Services\CipherService.cs" />
+    <Compile Include="Services\EncryptionService.cs" />
     <Compile Include="Services\PlaceService.cs" />
     <Compile Include="Services\RFIDService.cs" />
   </ItemGroup>

@@ -7,4 +7,3 @@ C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.Domain
 C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.Domain\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.Domain\bin\Debug\EntityFramework.xml
 C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.Domain\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.Domain\obj\Debug\ACMA.Domain.csprojResolveAssemblyReference.cache

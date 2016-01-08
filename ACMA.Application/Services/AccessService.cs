@@ -16,6 +16,8 @@ namespace ACMA.Application.Services
             user.Blocked = false;
             user.DateRegistration = DateTime.Now;
 
+            user.Password = EncryptionService.CriptografarSenha(user.Password);
+
             using (var accessRepository = new AccessRepository())
             {
                 accessRepository.SaveNewUser(user);
@@ -26,13 +28,29 @@ namespace ACMA.Application.Services
         {
             using (var accessRepository = new AccessRepository())
             {
+                //Retorna password do usuário para buscar o salt da conta
+                var password = accessRepository.GetUserPasswordBy(user.UserName);
+                var saltRandonPassword = password != null ? password.Split('$').FirstOrDefault() : null;
+
+                user.Password = EncryptionService.CriptografarSenha(user.Password, saltRandonPassword);
                 return accessRepository.GetUserBy(user.UserName, user.Password) == null ? false : true;
             }
         }
 
         public void RecoveryPassword(string email)
         {
-            throw new NotImplementedException();
+            //Criar nova senha
+            string password = EncryptionService.GerarStringRandomica(12);
+            //Cadastrar nova senha
+            UpdatePassword(email, password);
+            //Enviar email com nvoa senha
+
+        }
+
+        public void UpdatePassword(string email, string password) {           
+            using (var accessRepository = new AccessRepository()){
+                accessRepository.UpdatePassword(email, password);
+            }
         }
 
         public void Dispose()

@@ -16,3 +16,4 @@ C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.Reposi
 C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.Repository\obj\Debug\ACMA.Repository.csproj.GenerateResource.Cache
 C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.Repository\obj\Debug\ACMA.Repository.dll
 C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.Repository\obj\Debug\ACMA.Repository.pdb
+C:\Users\leandro.andrioli\Documents\Visual Studio 2012\Projects\ACMA\ACMA.Repository\obj\Debug\ACMA.Repository.Migrations.Alter_Table_User_Password_Size.resources
