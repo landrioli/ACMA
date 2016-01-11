@@ -34,11 +34,16 @@
         $(form).validate().resetForm();
     };
 
+    var checkBoxSwitchState = function (element) {
+        return $(element).bootstrapSwitch('state');
+    };
+
     return {
         getFormData: getFormData,
         clearForm: clearForm,
         removeNoNumerics: removeNoNumerics,
-        isDatePreviousNow: isDatePreviousNow
+        isDatePreviousNow: isDatePreviousNow,
+        checkBoxSwitchState: checkBoxSwitchState
     };
 
 }());

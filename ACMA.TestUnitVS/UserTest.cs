@@ -88,7 +88,27 @@ namespace ACMA.TestUnitVS
         [TestMethod]
         public void UpdateUser()
         {
+            
+            using (var accessRepository = new AccessRepository())
+            {
+                var userRetorned = accessRepository.GetUserBy(registerUser.UserName);
 
+                using (var accessService = new AccessService())
+                {
+                    userRetorned.Active = false;
+                    userRetorned.Blocked = true;
+                    accessService.UpdateUser(userRetorned);
+                }
+
+                var userUpdated = accessRepository.GetUserBy(registerUser.UserName);
+
+                var saltRandomicoSenha = userUpdated != null ? userUpdated.Password.Split('$').FirstOrDefault() : null;
+                var passwordCipher = EncryptionService.CriptografarSenha(registerUser.Password, saltRandomicoSenha);
+
+                Assert.IsTrue(userUpdated.Blocked);
+                Assert.IsFalse(userUpdated.Active);
+            }
         }
+
     }
 }

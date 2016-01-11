@@ -20,7 +20,7 @@ namespace ACMA.Application.Services
 
             using (var accessRepository = new AccessRepository())
             {
-                accessRepository.SaveNewUser(user);
+                accessRepository.SaveUser(user);
             }
         }
 
@@ -50,6 +50,15 @@ namespace ACMA.Application.Services
         public void UpdatePassword(string email, string password) {           
             using (var accessRepository = new AccessRepository()){
                 accessRepository.UpdatePassword(email, password);
+            }
+        }
+
+        public void UpdateUser(User user) {
+            user.Password = EncryptionService.CriptografarSenha(user.Password);
+
+            using (var accessRepository = new AccessRepository())
+            {
+                accessRepository.SaveUser(user);
             }
         }
 

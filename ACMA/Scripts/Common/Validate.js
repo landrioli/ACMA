@@ -110,9 +110,13 @@
         });
     };
 
-    var configUpdateUserForm = function () {
+    var configUpdateUserForm = function (submitHandler) {
         ValidateMethod.AddMethodFullName();
         ValidateMethod.AddMethodSelectListRequired();
+
+        $('#IdSelectListProfile').on('change', function () {
+            $(this).valid();
+        });
 
         $("#formUpdateUser").validate({
             submitHandler: function (form) {
@@ -183,7 +187,8 @@
 
     return {
         configLoginForm: configLoginForm,
-        configRegisterUserForm: configRegisterUserForm
+        configRegisterUserForm: configRegisterUserForm,
+        configUpdateUserForm: configUpdateUserForm
     };
 
 }());

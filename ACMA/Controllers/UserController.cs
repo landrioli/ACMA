@@ -19,7 +19,7 @@ namespace ACMA.Controllers
         }
 
         [HttpPost]
-        public ActionResult RegisterUser(RegisterUserModel RegisterUser)
+        public JsonResult RegisterUser(RegisterUserModel RegisterUser)
         {
             try
             {
@@ -39,6 +39,24 @@ namespace ACMA.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public JsonResult UpdateUser(UpdateUserModel RegisterUser)
+        {
+            try
+            {
+                using (var accessService = new AccessService())
+                {
+                    accessService.UpdateUser(RegisterUser.ConvertModelToDomain());
+                    return GetSuccessJson("Cadastro de Usuário", "O usuário foi cadastrado com sucesso.");
+                }
+            }
+            catch (Exception)
+            {
+                return GetErrorJson("Cadastro de Usuário", "Não foi possível cadastrar o usuário. Tente novamente mais tarde.");
+            }
+        }
+
 
         public ActionResult RemoveUser()
         {

@@ -22,7 +22,7 @@ namespace ACMA.Repository.Repository
             return this.Context.User.Where(p => p.UserName == userName).SingleOrDefault();
         }
 
-        public void SaveNewUser(User user)
+        public void SaveUser(User user)
         {
             try
             {

@@ -130,6 +130,13 @@
         });
     };
 
+    //var AddMethodCheckBoxRequired = function () {
+    //    //$.validator.setDefaults({ ignore: ":hidden:not(select)" });
+    //    $.validator.setDefaults({ ignore: "" });
+    //    $.validator.addMethod("checkBoxRequired", function (value, element) {
+    //        return value != null && value != '';
+    //    });
+    //};
 
     return {
         adicionarMetodoValidacaoCnpj: adicionarMetodoValidacaoCnpj,
