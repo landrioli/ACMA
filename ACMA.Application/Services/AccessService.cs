@@ -62,6 +62,13 @@ namespace ACMA.Application.Services
             }
         }
 
+        public List<User> GetAllUsers() {
+            using (var accessRepository = new AccessRepository())
+            {
+                return accessRepository.GetAllUsers();
+            }
+        }
+
         public void Dispose()
         {
         }

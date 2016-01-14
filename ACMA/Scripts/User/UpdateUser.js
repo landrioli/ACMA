@@ -9,6 +9,7 @@
             $("#Active").bootstrapSwitch('_width');
         }, 1);
 
+        
     };
 
     var inicializarEventosDaPagina = function () {

@@ -110,5 +110,15 @@ namespace ACMA.TestUnitVS
             }
         }
 
+        [TestMethod]
+        public void GetAllUsers() {
+            using (var accessService = new AccessService())
+            {
+                var users = accessService.GetAllUsers();
+
+                Assert.AreEqual(2,users.Count);
+            }
+        }
+
     }
 }

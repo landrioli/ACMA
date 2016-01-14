@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "SearchUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Scripts {
+
+    <script src="https://cdn.datatables.net/select/1.1.0/js/dataTables.select.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.1.0/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.1.0/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.1.0/js/buttons.print.min.js"></script>
+
+    <script src="~/Scripts/DataTables/dataTables.tableTools.js"></script>
+    <script src="~/Scripts/DataTables/full_numbers_no_ellipses.js"></script>
+    <script src="~/Scripts/Common/DataTablesFactory.js"></script>
+
+    <script src="~/Scripts/User/SearchUser.js"></script>
+
+    <script type="text/javascript">
+        SearchUser.init();
+    </script>
+}
+
+<link href="https://cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/buttons/1.1.0/css/buttons.dataTables.min.css" rel="stylesheet" />
+
+
+
+<form class="form-horizontal" action="javascript:void(0)" method="post" id="formSearchUser">
+    <div class="wrapper wrapper-white">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Nome de Usuario</label>
+                    <input type="text" title="UserName" id="UserName" name="UserName">
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<table id="DataGridUsersSearch" class="display" width="100%">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>FullName</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>IdProfile</th>
+            <th>Blocked</th>
+            <th>Active</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+</table>

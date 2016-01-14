@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using ACMA.Models.User;
 using ACMA.Application.Services;
+using System.Web.Script.Serialization;
 
 namespace ACMA.Controllers
 {
@@ -26,7 +27,7 @@ namespace ACMA.Controllers
                 using (var accessService = new AccessService())
                 {
                     accessService.RegisterNewUser(RegisterUser.ConvertModelToDomain());
-                    return GetSuccessJson("Cadastro de Usuário","O usuário foi cadastrado com sucesso.");
+                    return GetSuccessJson("Cadastro de Usuário", "O usuário foi cadastrado com sucesso.");
                 }
             }
             catch (Exception)
@@ -34,6 +35,12 @@ namespace ACMA.Controllers
                 return GetErrorJson("Cadastro de Usuário", "Não foi possível cadastrar o usuário. Tente novamente mais tarde.");
             }
         }
+
+        public ActionResult SearchUser()
+        {
+            return View();
+        }
+
 
         public ActionResult UpdateUser()
         {
@@ -57,10 +64,37 @@ namespace ACMA.Controllers
             }
         }
 
+        [HttpGet]
+        public JsonResult GetUsers()
+        {
+            using (var accessService = new AccessService())
+            {
+                var users = accessService.GetAllUsers();
+                var listGridUserModel = new List<GridUserModel>();
+
+                foreach (var user in users)
+                {
+                    var gridUserModel = new GridUserModel();
+                    gridUserModel.ConvertDomainToModel(user);
+                    listGridUserModel.Add(gridUserModel);
+                }
+
+                return new JsonResult()
+               {
+                   Data = SerializeJavaScript(listGridUserModel),
+                   JsonRequestBehavior = JsonRequestBehavior.AllowGet
+               };
+            }
+        }
 
         public ActionResult RemoveUser()
         {
             return View();
+        }
+
+        private string SerializeJavaScript(Object obj) {
+            var jss = new JavaScriptSerializer();
+            return jss.Serialize(obj);
         }
     }
 }

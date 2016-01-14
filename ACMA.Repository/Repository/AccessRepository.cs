@@ -75,5 +75,13 @@ namespace ACMA.Repository.Repository
                 return context.User.Where(p => p.UserName == userName).Select(p => p.Password).SingleOrDefault();
             }
         }
+
+        public List<User> GetAllUsers()
+        {
+            using (var context = new Context())
+            {
+                return context.User.ToList();
+            }
+        }
     }
 }
