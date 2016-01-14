@@ -61,8 +61,8 @@
                {
                    "data": null,
                    "render": function (data, type, full) {
-                       return '<a class="btn btn-success btn-sm" href=#/' + data.Id + '>' + 'Editar' + '</a>' +
-                              '<a class="btn btn-danger btn-sm" href=#/' + data.Id + '>' + 'Remover' + '</a>';
+                       return '<a class="btn btn-success btn-sm" href=/User/UpdateUser/' + data.Id + '>' + 'Editar' + '</a>' +
+                              '<a class="btn btn-danger btn-sm" href=/' + data.Id + '>' + 'Remover' + '</a>';
                    }
                }]);
         dataTablesFactory.setColumnsBool([5, 6]);
@@ -110,7 +110,6 @@
     var init = function () {
         inicializarPlugins();
         inicializarEventosDaPagina();
-        Validate.configSearchUserForm(searchUser);
     };
 
     return {

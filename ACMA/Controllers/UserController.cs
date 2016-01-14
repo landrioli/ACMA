@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using ACMA.Models.User;
 using ACMA.Application.Services;
 using System.Web.Script.Serialization;
+using ACMA.Filters;
 
 namespace ACMA.Controllers
 {
@@ -41,20 +42,27 @@ namespace ACMA.Controllers
             return View();
         }
 
-
-        public ActionResult UpdateUser()
+        [NoDirectUrlAccess]
+        public ActionResult UpdateUser(int id)
         {
-            return View();
+            using (var accessService = new AccessService())
+            {
+                var user = accessService.GetUserById(id);
+                var updateUserModel = new UpdateUserModel();
+                updateUserModel.ConvertDomainToModel(user);
+
+                return View(updateUserModel);
+            }
         }
 
         [HttpPost]
-        public JsonResult UpdateUser(UpdateUserModel RegisterUser)
+        public JsonResult UpdateUser(UpdateUserModel updateUserModel)
         {
             try
             {
                 using (var accessService = new AccessService())
                 {
-                    accessService.UpdateUser(RegisterUser.ConvertModelToDomain());
+                    accessService.UpdateUser(updateUserModel.ConvertModelToDomain());
                     return GetSuccessJson("Cadastro de Usuário", "O usuário foi cadastrado com sucesso.");
                 }
             }
@@ -92,7 +100,8 @@ namespace ACMA.Controllers
             return View();
         }
 
-        private string SerializeJavaScript(Object obj) {
+        private string SerializeJavaScript(Object obj)
+        {
             var jss = new JavaScriptSerializer();
             return jss.Serialize(obj);
         }

@@ -185,38 +185,10 @@
         });
     };
 
-    var configSearchUserForm = function (submitHandler) {
-
-        $("#formSearchUser").validate({
-            submitHandler: function (form) {
-                if ($(form).valid()) {
-                    submitHandler(form);
-                }
-                return false;
-            },
-            onfocusout: function (element) {
-                var valid = $(element).valid();
-                if (!valid)
-                    $(element).val('');
-            },
-            rules: {
-                UserName: {
-                    required: true
-                }
-            },
-            messages: {
-                UserName: {
-                    required: 'O campo Usuario é obrigatório'
-                }
-            }
-        });
-    };
-
     return {
         configLoginForm: configLoginForm,
         configRegisterUserForm: configRegisterUserForm,
-        configUpdateUserForm: configUpdateUserForm,
-        configSearchUserForm: configSearchUserForm
+        configUpdateUserForm: configUpdateUserForm
     };
 
 }());

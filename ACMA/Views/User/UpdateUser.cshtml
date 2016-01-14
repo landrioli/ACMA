@@ -20,14 +20,14 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Nome de Usuario</label>
-                    @Html.TextBoxFor(m => m.UserName, new { title = "UserName", id = "UserName", Name = "UserName", @class = "form-control" })
+                    @Html.TextBoxFor(m => m.UserName, new { title = "UserName", id = "UserName", Name = "UserName", @class = "form-control", disabled = "disabled"})
                 </div>
             </div>
 
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Senha</label>
-                    @Html.PasswordFor(m => m.Password, new { title = "Password", id = "Password", Name = "Password", @class = "form-control" })
+                    @Html.PasswordFor(m => m.Password, new { title = "Password", id = "Password", Name = "Password", value = Model.Password, @class = "form-control" })
                 </div>
             </div>
         </div>

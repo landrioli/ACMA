@@ -2,7 +2,11 @@
     'use strict';
 
     var inicializarPlugins = function () {
+        var celPhone = $("#Phone").val();
         $("#Phone").mask("(99) 9999-9999");
+        $("#Phone").val(celPhone);
+        $('#Phone').trigger('input')
+
         $('#IdSelectListProfile').chosen();
         window.setTimeout(function () {
             $("#Blocked").bootstrapSwitch('_width');

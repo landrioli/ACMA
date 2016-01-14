@@ -35,5 +35,17 @@ namespace ACMA.Models.User
                 Active = this.Active
             };
         }
+
+        public void ConvertDomainToModel(userDomain.User user)
+        {
+            this.UserName = user.UserName;
+            this.Password = user.Password;
+            this.IdSelectListProfile = user.IdProfile;
+            this.FullName = user.Contact.FullName;
+            this.Email = user.Contact.Email;
+            this.Phone = user.Contact.Phone;
+            this.Blocked = user.Blocked;
+            this.Active = user.Active;
+        }
     }
 }

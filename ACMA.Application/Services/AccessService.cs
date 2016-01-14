@@ -72,5 +72,13 @@ namespace ACMA.Application.Services
         public void Dispose()
         {
         }
+
+        public User GetUserById(int id)
+        {
+            using (var accessRepository = new AccessRepository())
+            {
+                return accessRepository.GetUserBy(id);
+            }
+        }
     }
 }

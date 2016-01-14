@@ -22,6 +22,11 @@ namespace ACMA.Repository.Repository
             return this.Context.User.Where(p => p.UserName == userName).SingleOrDefault();
         }
 
+        public User GetUserBy(int id)
+        {
+            return this.Context.User.Where(p => p.Id == id).Single();
+        }
+
         public void SaveUser(User user)
         {
             try
