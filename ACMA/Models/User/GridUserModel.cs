@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,15 +17,9 @@ namespace ACMA.Models.User
         public string Email { get; set; }
         public int IdProfile { get; set; }
 
-        public void ConvertDomainToModel(userDomain.User user)
+        public static GridUserModel ConvertDomainToModel(userDomain.User user)
         {
-            this.Id = user.Id;
-            this.FullName = user.Contact.FullName;
-            this.Blocked = user.Blocked;
-            this.Active = user.Active;
-            this.Phone = user.Contact.Phone;
-            this.Email = user.Contact.Email;
-            this.IdProfile = user.IdProfile;
+            return Mapper.Map<GridUserModel>(user);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ACMA.AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -23,6 +24,8 @@ namespace ACMA
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            AutoMapperConfig.RegisterMappings();
         }
 
         protected void Application_PostAuthenticateRequest(Object sender, EventArgs e)

@@ -1,4 +1,5 @@
 ﻿using ACMA.Domain.Entities.Common;
+using AutoMapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace ACMA.Models.User
 {
     public class UpdateUserModel
     {
+        public int Id { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
         public int IdSelectListProfile { get; set; }
@@ -18,34 +20,14 @@ namespace ACMA.Models.User
         public bool Blocked { get; set; }
         public bool Active { get; set; }
 
-        public userDomain.User ConvertModelToDomain()
+        public static userDomain.User ConvertModelToDomain(UpdateUserModel updateUserModel)
         {
-            return new userDomain.User()
-            {
-                UserName = this.UserName,
-                Password = this.Password,
-                IdProfile = this.IdSelectListProfile,
-                Contact = new Contact()
-                {
-                    FullName = this.FullName,
-                    Email = this.Email,
-                    Phone = this.Phone
-                },
-                Blocked = this.Blocked,
-                Active = this.Active
-            };
+            return Mapper.Map<UpdateUserModel, userDomain.User>(updateUserModel);
         }
 
-        public void ConvertDomainToModel(userDomain.User user)
+        public static UpdateUserModel ConvertDomainToModel(userDomain.User user)
         {
-            this.UserName = user.UserName;
-            this.Password = user.Password;
-            this.IdSelectListProfile = user.IdProfile;
-            this.FullName = user.Contact.FullName;
-            this.Email = user.Contact.Email;
-            this.Phone = user.Contact.Phone;
-            this.Blocked = user.Blocked;
-            this.Active = user.Active;
+            return Mapper.Map<userDomain.User, UpdateUserModel>(user);
         }
     }
 }

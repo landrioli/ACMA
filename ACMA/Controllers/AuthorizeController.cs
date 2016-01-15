@@ -18,13 +18,13 @@ namespace ACMA.Controllers
         }
 
         [HttpPost]
-        public JsonResult Login(Login login)
+        public JsonResult Login(LoginModel login)
         {
             if (ModelState.IsValid)
             {
                 using (var accessService = new AccessService())
                 {
-                    var canLogin = accessService.Login(login.ConvertModelToDomain());
+                    var canLogin = accessService.Login(LoginModel.ConvertModelToDomain(login));
                     if (canLogin)
                     {
                         System.Web.Security.FormsAuthentication.SetAuthCookie(login.UserName, false);

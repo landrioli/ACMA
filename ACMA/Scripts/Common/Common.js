@@ -11,6 +11,7 @@
 
     var getFormData = function (form) {
         var dadosDoFormulario = {};
+        var disabled = $(form).find(':input:disabled').removeAttr('disabled')
         $(form).serializeArray().map(function (item) {
             if (dadosDoFormulario[item.name]) {
                 if (typeof (dadosDoFormulario[item.name]) === "string") {
@@ -21,6 +22,7 @@
                 dadosDoFormulario[item.name] = item.value;
             }
         });
+        disabled.attr('disabled', 'disabled');
         return dadosDoFormulario;
     };
 

@@ -1,4 +1,5 @@
 ﻿using ACMA.Domain.Entities.Common;
+using AutoMapper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -19,15 +20,7 @@ namespace ACMA.Models.User
 
         public userDomain.User ConvertModelToDomain()
         {
-            return new userDomain.User()
-            {
-                UserName = this.UserName,
-                Password = this.Password,
-                IdProfile = this.IdSelectListProfile,
-                Contact = new Contact() { FullName = this.FullName, 
-                                          Email = this.Email, 
-                                          Phone = this.Phone}
-            };
+            return Mapper.Map<userDomain.User>(this);
         }
     }
 }

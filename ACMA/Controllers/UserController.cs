@@ -48,10 +48,7 @@ namespace ACMA.Controllers
             using (var accessService = new AccessService())
             {
                 var user = accessService.GetUserById(id);
-                var updateUserModel = new UpdateUserModel();
-                updateUserModel.ConvertDomainToModel(user);
-
-                return View(updateUserModel);
+                return View(UpdateUserModel.ConvertDomainToModel(user));
             }
         }
 
@@ -62,13 +59,13 @@ namespace ACMA.Controllers
             {
                 using (var accessService = new AccessService())
                 {
-                    accessService.UpdateUser(updateUserModel.ConvertModelToDomain());
-                    return GetSuccessJson("Cadastro de Usuário", "O usuário foi cadastrado com sucesso.");
+                    accessService.UpdateUser(UpdateUserModel.ConvertModelToDomain(updateUserModel));
+                    return GetSuccessJson("Alteração de dados de Usuário", "Os dados foram alterados com sucesso.");
                 }
             }
             catch (Exception)
             {
-                return GetErrorJson("Cadastro de Usuário", "Não foi possível cadastrar o usuário. Tente novamente mais tarde.");
+                return GetErrorJson("Alteração de Usuário", "Não foi possível alterar os dados. Tente novamente mais tarde.");
             }
         }
 
@@ -82,9 +79,7 @@ namespace ACMA.Controllers
 
                 foreach (var user in users)
                 {
-                    var gridUserModel = new GridUserModel();
-                    gridUserModel.ConvertDomainToModel(user);
-                    listGridUserModel.Add(gridUserModel);
+                    listGridUserModel.Add(GridUserModel.ConvertDomainToModel(user));
                 }
 
                 return new JsonResult()
