@@ -23,6 +23,9 @@
                         return (data === true) ? '<span class="glyphicon glyphicon-ok"></span>' : '<span class="glyphicon glyphicon-remove"></span>';
                     },
                     "targets": this.columnsBool
+                },
+                {
+                    className: "dt-body-center dt-head-center", targets: '_all'
                 }
             ],
             pagingType: "full_numbers_no_ellipses",
@@ -46,10 +49,10 @@
                     extend: 'collection', text: 'Exportar', className: 'btn btn-xs', buttons: [
                                                                           { extend: 'csv', text: 'Download CSV', className: 'btn btn-xs' },
                                                                           { extend: 'excel', text: 'Download Excel', className: 'btn btn-xs' },
-                                                                          { extend: 'pdf', text: 'Download PDF', className: 'btn btn-xs' }
+                                                                          { extend: 'pdf', text: 'Download PDF', className: 'btn btn-xs', message: 'PDF criado com o sistema ACMA.', title:'PDF Gerado no ACMA', alignment: 'center', image: 'data:image/png;~\Content\img\logo.png' }
                     ]
                 },
-                { extend: 'print', text: 'Imprimir', className: 'btn btn-xs' },
+                { extend: 'print', text: 'Imprimir', className: 'btn btn-xs', message: 'PDF criado com o sistema ACMA.', title: 'PDF Gerado no ACMA', },
             ],
             info: true,
             search: true,
@@ -84,8 +87,12 @@
                     "sortDescending": ": Ativar ordenação descendente na coluna"
                 },
                 buttons: {
-                    copyTitle: 'Copier au clipboard',
-                    copyKeys: 'Appuyez sur <i>ctrl</i> ou <i>\u2318</i> + <i>C</i> pour copier les données de table à votre presse-papiers du système. <br><br>Pour annuler, cliquez sur ce message ou appuyez sur Echap.'
+                    copyTitle: 'Copiado para a área de transferência',
+                    //copyInfo não funcionando
+                    copyInfo: {
+                        _: 'Copiado %d linhas',
+                        1: 'Copiado 1 linha'
+                    }
                 }
             }
         });

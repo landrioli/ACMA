@@ -171,7 +171,13 @@ button.dt-button:hover:not(.disabled), div.dt-button:hover:not(.disabled), a.dt-
     background-image: linear-gradient(top, #304056 0%, #304056 100%) !important;
     color: #ffffff;
 }
+
 .sorting:before, .sorting_desc:before, .sorting_asc:before {
     top: 10px;
     right: 3px;
+}
+
+.dataTables_wrapper {
+    width: 99%;
+    padding-left: 1%;
 }
