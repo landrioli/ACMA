@@ -8,9 +8,13 @@ namespace ACMA.Controllers
 {
     public class AssetController : Controller
     {
-        //
-        // GET: /Asset/
 
+        public ActionResult CreateAsset()
+        {
+            return View();
+        }
+
+        [HttpPost]
         public ActionResult CreateAsset()
         {
             return View();

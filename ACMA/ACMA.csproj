@@ -142,6 +142,7 @@
     <Compile Include="Controllers\AuthorizeController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CostCenterController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ReaderController.cs" />
     <Compile Include="Controllers\ReportController.cs" />
@@ -151,6 +152,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ActiveAsset\AssetModel.cs" />
     <Compile Include="Models\User\GridUserModel.cs" />
     <Compile Include="Models\User\RegisterUserModel.cs" />
     <Compile Include="Models\Authorize\LoginModel.cs" />
@@ -694,7 +696,7 @@
     <Content Include="Views\Authorize\Login.cshtml" />
     <Content Include="Views\Authorize\Logue.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\Error\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\Partials\_MenuLeft.cshtml" />
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
@@ -703,11 +705,12 @@
     <Content Include="Views\User\UpdateUser.cshtml" />
     <Content Include="Views\Shared\Partials\_Modal.cshtml" />
     <Content Include="Views\User\SearchUser.cshtml" />
+    <Content Include="Views\Shared\Error\Error404.cshtml" />
+    <Content Include="Views\Asset\CreateAsset.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Access\" />
-    <Folder Include="Views\Asset\" />
     <Folder Include="Views\CC\" />
     <Folder Include="Views\Reader\" />
     <Folder Include="Views\Report\" />
